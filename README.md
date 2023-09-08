@@ -1,7 +1,5 @@
 # MPerformer: An SE(3) Transformer-based Molecular Perceptron
-
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL3.0-blue)](https://github.com/FanmengWang/MPerformer/blob/master/LICENCE.txt)
-
 This is the official implementation of "MPerformer: An SE(3) Transformer-based Molecular Perceptron"
 
 MPerformer is a universal learning-based molecular perception method to construct 3D molecules with complete chemical information purely based on molecular 3D atom clouds.
