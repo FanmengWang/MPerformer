@@ -20,7 +20,6 @@ from rdkit import Chem
 from rdkit.Chem import Draw   
 from rdkit.Chem import AllChem
 from rdkit import Geometry
-import dpdata
 import time
 
 
