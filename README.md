@@ -16,4 +16,4 @@ Dependencies
 
 Quick Start
 ------------
-- Please download the trained checkpoint [Here](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link)
+- Please download the checkpoint [Here](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link) and place it to ./weight 
