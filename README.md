@@ -24,6 +24,18 @@ Quick Start
   python predict.py --filename $XYZ_PATH --outputs_path $SDF_PATH
   ```
 
+Citation
+--------
+If our work can help you, please cite it 
+```
+@inproceedings{wang2023MPerformer,
+  title={MPerformer: An SE(3) Transformer-based Molecular Perceptron},
+  author={Wang, Fanmeng and Xu, Hongteng and Chen, Xi and Lu, Shuqi and Deng, Yuqing and Huang, Wenbing},
+  booktitle={Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
+  year={2023}
+}
+```
+
 Acknowledgment
 --------
-This code is built upon [Uni-Mol](https://github.com/dptech-corp/Uni-Mol). Thanks for their contribution.
+This code is built upon [Uni-Mol](https://github.com/dptech-corp/Uni-Mol) and [Uni-Core](https://github.com/dptech-corp/Uni-Core). Thanks for their contribution.
