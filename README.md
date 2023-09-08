@@ -21,5 +21,5 @@ Quick Start
   ```bash
   XYZ_PATH='PATH OF YOUR XYZ FILE/FOLD'
   SDF_PATH='PATH TO SAVE SDF FILE'
-  python predict.py --filename your $XYZ_PATH --outputs_path $SDF_PATH
+  python predict.py --filename $XYZ_PATH --outputs_path $SDF_PATH
   ```
