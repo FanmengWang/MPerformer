@@ -17,5 +17,5 @@ Dependencies
 Quick Start
 ------------
 - Please download the [checkpoint](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link) and place it to the fold `./weight`
-- Then you can use the following command to get the corresponding sdf file
+- Then you can use the following command to get the corresponding sdf file \\
   `python predict.py --filename your xyz file/fold path --outputs_path your output path`
