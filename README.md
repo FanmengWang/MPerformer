@@ -38,4 +38,4 @@ If our paper can help you, please cite it
 
 Acknowledgment
 --------
-This Code is built upon [Uni-Mol](https://github.com/dptech-corp/Uni-Mol). Thanks for their contribution.
+This code is built upon [Uni-Mol](https://github.com/dptech-corp/Uni-Mol). Thanks for their contribution.
