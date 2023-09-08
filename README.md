@@ -14,6 +14,6 @@ Dependencies
  - [Uni-Core](https://github.com/dptech-corp/Uni-Core), you can check its [Installation Documentation](https://github.com/dptech-corp/Uni-Core#installation).
  - `pip install rdkit-pypi==2021.9.4`
 
-Quick inference
+Quick Start
 ------------
 - Please download the trained checkpoint [Here](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link)
