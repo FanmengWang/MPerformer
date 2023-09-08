@@ -23,3 +23,9 @@ Quick Start
   SDF_PATH='PATH TO SAVE SDF FILE'
   python predict.py --filename $XYZ_PATH --outputs_path $SDF_PATH
   ```
+
+Citation
+If our paper can help you, please cite it 
+```
+```
+This Code is built upon [Uni-Mol](https://github.com/dptech-corp/Uni-Mol). We would like to acknowledge their contribution.
