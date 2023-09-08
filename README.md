@@ -16,3 +16,4 @@ Dependencies
 
 Quick inference
 ------------
+- Please download the trained checkpoint [Here](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link)
