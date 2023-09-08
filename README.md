@@ -9,5 +9,5 @@ MPerformer is a universal learning-based molecular perception method to construc
 Dependencies
 ------------
  - [Uni-Core](https://github.com/dptech-corp/Uni-Core), you can check its [Installation Documentation](https://github.com/dptech-corp/Uni-Core#installation).
- - rdkit==2021.09.5, install via `pip install rdkit-pypi==2021.9.4`
+ - `pip install rdkit-pypi==2021.9.4`
 
