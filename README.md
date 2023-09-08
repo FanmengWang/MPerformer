@@ -17,7 +17,7 @@ Dependencies
 Quick Start
 ------------
 - Please download the [checkpoint](https://drive.google.com/file/d/1sHWm1xOy0I8_R50dPANfMUXoRQkoPCBJ/view?usp=drive_link) and place it to the fold `./weight`
-- Then you can use the following command to get the corresponding sdf file 
+- Given XYZ file/fold, you can use the following command to get the corresponding SDF file 
   ```bash
   XYZ_PATH='PATH OF YOUR XYZ FILE/FOLD'
   SDF_PATH='PATH TO SAVE SDF FILE'
