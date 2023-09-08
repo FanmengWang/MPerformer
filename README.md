@@ -1,6 +1,6 @@
 # MPerformer: An SE(3) Transformer-based Molecular Perceptron
 
-[![License: GPL-3.0]((https://img.shields.io/badge/GPL-3.0))](https://github.com/FanmengWang/MPerformer/LICENSE)
+[![License: GPL-3.0]((https://img.shields.io/badge/License-GPL3.0-blue?label=Licnes&color=blue))](https://github.com/FanmengWang/MPerformer/LICENSE)
 
 This is the official implementation of "MPerformer: An SE(3) Transformer-based Molecular Perceptron" (CIKM 2023 FULL PAPER)
 
