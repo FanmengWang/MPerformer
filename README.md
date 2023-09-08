@@ -9,10 +9,5 @@ MPerformer is a universal learning-based molecular perception method to construc
 Dependencies
 ------------
  - [Uni-Core](https://github.com/dptech-corp/Uni-Core), you can check its [Installation Documentation](https://github.com/dptech-corp/Uni-Core#installation).
- - rdkit==2021.09.5, install via `conda install -y -c conda-forge rdkit==2021.09.5`
+ - rdkit==2021.09.5, install via `pip install rdkit-pypi==2021.9.4`
 
-To use GPUs within docker you need to [install nvidia-docker-2](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker) first. Use the following command to pull the docker image:
-
-```bash
-docker pull dptechnology/unimol:latest-pytorch1.11.0-cuda11.3
-```
