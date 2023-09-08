@@ -4,3 +4,14 @@ This is the official implementation of the full paper "MPerformer: An SE(3) Tran
 MPerformer is a universal learning-based molecular perception method to construct 3D molecules with complete chemical information purely based on molecular 3D atom clouds.
 <p align="center"><img src="figures/Overview.png" width=80%></p>
 <p align="center"><b>An illustration of MPerformer and its learning paradigm.</b></p>
+
+
+Dependencies
+------------
+ - [Uni-Core](https://github.com/dptech-corp/Uni-Core), check its [Installation Documentation](https://github.com/dptech-corp/Uni-Core#installation).
+ - rdkit==2021.09.5, install via `conda install -y -c conda-forge rdkit==2021.09.5`
+
+To use GPUs within docker you need to [install nvidia-docker-2](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker) first. Use the following command to pull the docker image:
+
+```bash
+dock
