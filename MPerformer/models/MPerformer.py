@@ -215,7 +215,7 @@ class MPerformerModel(BaseUnicoreModel):
         classification_head_name=None,
         **kwargs
     ):  
-        
+                
         if classification_head_name is not None:
             features_only = True
 
@@ -225,7 +225,7 @@ class MPerformerModel(BaseUnicoreModel):
             padding_mask = None
             
         x = self.embed_tokens(src_tokens)
-
+                
         def get_dist_features(dist, et):
             n_node = dist.size(-1)
             gbf_feature = self.gbf(dist, et)
@@ -249,35 +249,11 @@ class MPerformerModel(BaseUnicoreModel):
         # logits            
         if classification_head_name is not None:
             logits = self.classification_heads[classification_head_name](encoder_rep)
-            
             pred_atom_charge = self.atom_charge_reg_head(logits.clone().detach())
-            
-            pred_atom_charge2 = logits.clone().detach() @ self.atom_charge_reg_head.linear1.weight.data.t() + self.atom_charge_reg_head.linear1.bias.data
-            pred_atom_charge2 = activation_fn(pred_atom_charge2)
-            pred_atom_charge2 = pred_atom_charge2 @ self.atom_charge_reg_head.linear2.weight.data.t() + self.atom_charge_reg_head.linear2.bias.data
-            pred_atom_charge2 = activation_fn(pred_atom_charge2)
-            pred_atom_charge2 = pred_atom_charge2 @ self.atom_charge_reg_head.linear3.weight.data.t() + self.atom_charge_reg_head.linear3.bias.data
-            pred_atom_charge2 = activation_fn(pred_atom_charge2)
-            pred_atom_charge2 = pred_atom_charge2 @ self.atom_charge_reg_head.linear4.weight.data.t() + self.atom_charge_reg_head.linear4.bias.data
-            pred_atom_charge2 = activation_fn(pred_atom_charge2)
-            pred_atom_charge2 = pred_atom_charge2 @ self.atom_charge_reg_head.linear5.weight.data.t() + self.atom_charge_reg_head.linear5.bias.data
-            
         
         # logits_atom_H
         logits_atom_H = self.atom_H_head(encoder_rep)
-        
         pred_atom_H = self.atom_H_reg_head(logits_atom_H.clone().detach())
-        
-        pred_atom_H2 = logits_atom_H.clone().detach() @ self.atom_H_reg_head.linear1.weight.data.t() + self.atom_H_reg_head.linear1.bias.data
-        pred_atom_H2 = activation_fn(pred_atom_H2)
-        pred_atom_H2 = pred_atom_H2 @ self.atom_H_reg_head.linear2.weight.data.t() + self.atom_H_reg_head.linear2.bias.data
-        pred_atom_H2 = activation_fn(pred_atom_H2)
-        pred_atom_H2 = pred_atom_H2 @ self.atom_H_reg_head.linear3.weight.data.t() + self.atom_H_reg_head.linear3.bias.data
-        pred_atom_H2 = activation_fn(pred_atom_H2)
-        pred_atom_H2 = pred_atom_H2 @ self.atom_H_reg_head.linear4.weight.data.t() + self.atom_H_reg_head.linear4.bias.data
-        pred_atom_H2 = activation_fn(pred_atom_H2)
-        pred_atom_H2 = pred_atom_H2 @ self.atom_H_reg_head.linear5.weight.data.t() + self.atom_H_reg_head.linear5.bias.data
-         
                 
         # encoder_coord
         coords_emb = src_coord
@@ -293,23 +269,10 @@ class MPerformerModel(BaseUnicoreModel):
         coord_update = torch.sum(coord_update, dim=2)
         encoder_coord = coords_emb + coord_update
             
-
         # encoder_bond
         encoder_bond = self.bond_head(encoder_pair_rep)
-    
         pred_atom_bond = self.atom_bond_reg_head(encoder_bond.clone().detach())
         
-        pred_atom_bond2 = encoder_bond.clone().detach() @ self.atom_bond_reg_head.linear1.weight.data.t() + self.atom_bond_reg_head.linear1.bias.data
-        pred_atom_bond2 = activation_fn(pred_atom_bond2)
-        pred_atom_bond2 = pred_atom_bond2 @ self.atom_bond_reg_head.linear2.weight.data.t() + self.atom_bond_reg_head.linear2.bias.data
-        pred_atom_bond2 = activation_fn(pred_atom_bond2)
-        pred_atom_bond2 = pred_atom_bond2 @ self.atom_bond_reg_head.linear3.weight.data.t() + self.atom_bond_reg_head.linear3.bias.data
-        pred_atom_bond2 = activation_fn(pred_atom_bond2)
-        pred_atom_bond2 = pred_atom_bond2 @ self.atom_bond_reg_head.linear4.weight.data.t() + self.atom_bond_reg_head.linear4.bias.data
-        pred_atom_bond2 = activation_fn(pred_atom_bond2)
-        pred_atom_bond2 = pred_atom_bond2 @ self.atom_bond_reg_head.linear5.weight.data.t() + self.atom_bond_reg_head.linear5.bias.data        
-
-
         return (
             logits,
             logits_atom_H, 
@@ -318,9 +281,6 @@ class MPerformerModel(BaseUnicoreModel):
             pred_atom_charge,
             pred_atom_H,
             pred_atom_bond,
-            pred_atom_charge2,
-            pred_atom_H2,
-            pred_atom_bond2,
             x_norm,
             delta_encoder_pair_rep_norm,
             encoder_bond
