@@ -20,6 +20,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw   
 from rdkit.Chem import AllChem
 from rdkit import Geometry
+import dpdata
 import time
 
 
@@ -83,7 +84,7 @@ def read_xyz(filename_path, skipH=True):
     return(atomtypes, coords, q, title)
 
 
-def create_sdfile(name, atomtypes, coords, row1, row2, bond):
+def create_sdfile(name, atomtypes, coords, row1, row2, bond, charge):
     """
     Creates string with SD info
 
@@ -109,6 +110,18 @@ def create_sdfile(name, atomtypes, coords, row1, row2, bond):
     for index in range(len(row1)):
         ins += "%3d%3d%3d  0  0  0  0\n" % (row1[index], row2[index], bond[index])
 
+    add_charge_num = 0
+    charge_ins = ""
+    for idx, charge_num in enumerate(charge):
+        if charge_num != 0:
+            charge_ins += f"  {idx+1}  {charge_num}"
+            add_charge_num = add_charge_num + 1
+    
+    if add_charge_num != 0:
+        charge_ins = f"M  CHG  {add_charge_num}" + charge_ins
+        ins += charge_ins
+        ins += "\n"
+            
     ins += "M  END"
     return(ins)
 
@@ -195,13 +208,27 @@ def check_consist_valid(mol_file):
                 bond_type.append(bond_list[index])
             index = index + 1
     
-    ins = create_sdfile(mol_file['id_name'],  mol_file['atoms'],  mol_file['coords'], row1, row2, bond_type)
+    ins = create_sdfile(mol_file['id_name'],  mol_file['atoms'],  mol_file['coords'], row1, row2, bond_type, charge_list)
 
-    filename = os.path.join(args.outputs_path, mol_file['id_name'] + '_MP.sdf')
+    filename = os.path.join(args.outputs_path, mol_file['id_name'] + '.sdf')
 
     with open(filename, 'w') as f:
         f.write(ins)
     
+    try:
+        suppl = Chem.SDMolSupplier(filename)
+        mol = [mol for mol in suppl if mol][0]
+    except:
+        try:
+            suppl = Chem.SDMolSupplier(filename, sanitize=False)
+            mol = [mol for mol in suppl if mol][0]
+            system = dpdata.BondOrderSystem(rdkit_mol=mol)
+            Chem.Kekulize(mol)
+        except:
+            return None
+        
+    with Chem.SDWriter(filename) as w:
+        w.write(mol)
         
         
 if __name__ == "__main__":
@@ -341,7 +368,6 @@ if __name__ == "__main__":
             mol_file['atoms'] = list(np.array(value['atoms']))
             mol_file['coords'] = list(np.array(value['coordinates'][0]))
             
-            mol_file['logit_output'] = predict['logit_output'][index].float() 
             mol_file['logit_output'] = predict['logit_output'][index].float()   
             mol_file['target'] = predict['target'][index]
             mol_file['logit_atom_H_output'] = predict['logit_atom_H_output'][index].float()            
