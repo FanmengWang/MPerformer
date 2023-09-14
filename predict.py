@@ -104,7 +104,6 @@ def create_sdfile(name, atomtypes, coords, row1, row2, bond, charge):
     # atomb block
     for at, xyz in zip(atomtypes, coords):
         ins += "%10.4f%10.4f%10.4f %-2s 0  0  0  0  0\n" % (xyz[0], xyz[1], xyz[2], at)
-        # ins += "%2s %12.4f %12.4f %12.4f  \n" % ( at,xyz[0], xyz[1], xyz[2])
 
     # bond block
     for index in range(len(row1)):
