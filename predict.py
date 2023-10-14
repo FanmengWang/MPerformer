@@ -246,7 +246,7 @@ if __name__ == "__main__":
     parser.add_argument('--inputs_path', help="model input path", default='inputs')  
 
     parser.add_argument('--seed', help="random seed", type=int, default=0)  
-    parser.add_argument('--noise_weight', type=float, default=0.03)  
+    parser.add_argument('--noise_weight', type=float, default=0)  
     parser.add_argument('--add_noise', action='store_true', help='whether add noise to coordinates\n', default=False)
     
     parser.add_argument('--cache_path', help="model cache path", default='cache')  
