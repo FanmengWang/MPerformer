@@ -26,6 +26,8 @@ Quick Start
   SDF_PATH='PATH TO SAVE SDF FILE'
   python predict.py --filename $XYZ_PATH --outputs_path $SDF_PATH
   ```
+- Website Demo
+  You can also try MPerformer online by clicking on this [link](https://labs.dp.tech/projects/mperforemr/)
 
 Citation
 --------
