@@ -36,10 +36,11 @@ Citation
 --------
 If our work can help you, please cite it 
 ```
-@inproceedings{wang2023MPerformer,
-  title={MPerformer: An SE(3) Transformer-based Molecular Perceptron},
+@inproceedings{wang2023mperformer,
+  title={MPerformer: An SE (3) Transformer-based Molecular Perceptron},
   author={Wang, Fanmeng and Xu, Hongteng and Chen, Xi and Lu, Shuqi and Deng, Yuqing and Huang, Wenbing},
   booktitle={Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
+  pages={2512--2522},
   year={2023}
 }
 ```
