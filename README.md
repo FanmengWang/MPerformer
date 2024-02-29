@@ -31,8 +31,7 @@ Quick Start
 
 Website Demo
 ------------
-  You can also try MPerformer online by clicking on this [link](https://labs.dp.tech/projects/mperforemr/)
-
+  You can also try MPerformer online by clicking on this [link](https://app.dp.tech/projects/mperforemr/)
 
 Citation
 --------
