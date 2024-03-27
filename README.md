@@ -2,7 +2,7 @@
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue)](https://github.com/FanmengWang/MPerformer/blob/master/LICENCE.txt)
 [![Static Badge](https://img.shields.io/badge/PyTorch-red)](https://pytorch.org/)
 
-[[Paper]](https://dl.acm.org/doi/abs/10.1145/3583780.3614974) [[Slide]](https://github.com/FanmengWang/MPerformer/blob/master/slides/MPerformer_CIKM23.pdf) [[Demo]](https://app.bohrium.dp.tech/mperforemr/) 
+[[Paper]](https://dl.acm.org/doi/abs/10.1145/3583780.3614974) [[Slide]](https://github.com/FanmengWang/MPerformer/blob/master/Slide/MPerformer_CIKM23.pdf) [[Demo]](https://app.bohrium.dp.tech/mperforemr/) 
 
 This is the official implementation of "MPerformer: An SE(3) Transformer-based Molecular Perceptron"
 
